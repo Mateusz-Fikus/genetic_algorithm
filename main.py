@@ -35,8 +35,8 @@ def main():
 
     while generation < 100:
         while len(pop_two) != len(pop_one):
-            parent1 = tournament(pop_one, 40)
-            parent2 = tournament(pop_one, 40)
+            parent1 = tournament(pop_one, 20)
+            parent2 = tournament(pop_one, 20)
             if random.randint(0, 1) == 1:
                 subject = crossover(parent1, parent2)
             else:

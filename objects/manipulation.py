@@ -28,8 +28,12 @@ class Mutations:
     @staticmethod
     def inversion(pop):
         start_cut, end_cut = get_random_slice_numbers(len(pop))
-        res = list(pop)
+        res = pop.copy()
         res[start_cut:end_cut] = res[start_cut:end_cut][::-1]
+
+        res.remove(res[0])
+        dist = PathCalc.calculate_cords_increasing_order(res)[0]
+        res.insert(0, dist)
 
         return res
 
